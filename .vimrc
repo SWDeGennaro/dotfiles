@@ -7,7 +7,6 @@ execute pathogen#infect()
 " set background=dark
 " colorscheme Dracula
 syntax enable
-let g:solarized_termcolors=256
 set background=dark
 colorscheme solarized
 set clipboard=unnamed
@@ -107,6 +106,12 @@ endfunction
 noremap <leader>ss :call StripWhitespace()<CR>
 " Save a file as root (,W)
 noremap <leader>W :w !sudo tee % > /dev/null<CR>
+
+" toggle paste mode
+nnoremap <F2> :set invpaste paste?<CR>
+set pastetoggle=<F2>
+set showmode
+
 " Automatic commands
 if has("autocmd")
         " Enable file type detection
